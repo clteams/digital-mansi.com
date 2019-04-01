@@ -1,0 +1,214 @@
+{
+  "corpus_name": "corpus",
+  "input_format": "json",
+  "debug": false,
+  "media": true,
+  "media_length": 20,
+  "max_context_expand": 8,
+  "max_distance_filter": 200000,
+  "max_docs_retrieve": 9999,
+  "max_words_in_sentence": 40,
+  "query_timeout": 60,
+  "json_indent": 0,
+  "viewable_meta": [
+    "filename",
+    "author",
+    "researcher",
+    "title",
+    "genre",
+    "place",
+    "dialect",
+    "year_from",
+    "year_to",
+    "year"
+  ],
+  "sentence_meta": [
+    "age",
+    "gender"
+  ],
+  "search_meta": {
+    "columns": [
+      [
+	{"type": "input_text", "name": "author", "placeholder": "Author/Consultant"},
+	{"type": "option", "name": "author", "value": "Алгадьева Анна Николаевна", "text": "Алгадьева А. Н."},
+	{"type": "option", "name": "author", "value": "Анямов Евгений Юрьевич", "text": "Анямов Е. Ю."},
+	{"type": "option", "name": "author", "value": "Анямова Альбина Александровна", "text": "Анямова А. А."},
+	{"type": "option", "name": "author", "value": "Бахтиярова Вера Владимировна", "text": "Бахтиярова В. В."},
+	{"type": "option", "name": "author", "value": "Пеликова Светлана Прокопьевна", "text": "Пеликова С. П."},
+	{"type": "option", "name": "author", "value": "Тасманова Мария Васильевна", "text": "Тасманова М. В."}
+      ],
+      [
+        {"type": "input_text", "name": "title", "placeholder": "Title"},
+        {"type": "separator"},
+        {"type": "input_text", "name": "dialect", "placeholder": "Dialect"},
+	{"type": "option", "name": "dialect", "value": "standard", "text": "Standard Mansi"},
+	{"type": "option", "name": "dialect", "value": "upper_lozva", "text": "Upper Lozva Mansi"},
+        {"type": "input_text", "name": "place", "placeholder": "Place"},
+	{"type": "option", "name": "place", "value": "Ушма", "text": "д. Ушма"},
+	{"type": "option", "name": "place", "value": "Тресколье", "text": "д. Тресколье"}
+      ],
+      [
+        {"type": "input_text", "name": "genre", "placeholder": "Genre"},
+        {"type": "option", "name": "genre", "value": "newspaper", "text": "\uD83D\uDCF0 news"},
+        {"type": "option", "name": "genre", "value": "fieldwork", "text": "\uD83C\uDF04 field recordings"},
+        {"type": "input_number", "name": "year_from", "placeholder": "Year: from"},
+        {"type": "input_number", "name": "year_to", "placeholder": "Year: to"}
+      ]
+    ],
+    "stat_options": [
+      "author",
+      "dialect",
+      "place",
+      "title",
+      "year"
+    ]
+  },
+  "word_fields":
+  [
+    "trans_ru",
+    "trans_en"
+  ],
+  "languages": ["mns", "russian"],
+  "transliterations": ["orthography", "exp", "exp_phonetic"],
+  "input_methods": ["normal"],
+  "interface_languages": {"en": "English", "ru": "Russian"},
+  "all_language_search_enabled": true,
+  "gloss_search_enabled": true,
+  "ambiguous_analyses": true,
+  "lang_props":
+  {
+    "mns":
+    {
+      "gloss_shortcuts": {
+        "case": "(obl(\\.pl)?|instr|transl|loc|abl|lat)",
+        "tense": "(pst|fut|prs)"
+      },
+      "gr_fields_order": ["tense", "person", "number", "case", "poss"],
+      "gloss_selection": {
+        "columns": [
+        [
+            {"type": "gloss", "value": "NOM", "tooltip": "Nominative"},
+            {"type": "gloss", "value": "ACC", "tooltip": "Accusative"},
+            {"type": "gloss", "value": "LAT", "tooltip": "Lative"},
+            {"type": "gloss", "value": "ABL", "tooltip": "Ablative"},            
+            {"type": "gloss", "value": "LOC", "tooltip": "Locative"},
+            {"type": "gloss", "value": "INS", "tooltip": "Instrumental"},
+            {"type": "gloss", "value": "TRANSL", "tooltip": "Translative"},
+            {"type": "gloss", "value": "VOC", "tooltip": "Vocative"},
+            {"type": "separator"},
+            {"type": "gloss", "value": "POSS", "tooltip": "Possessive"}
+       ],
+       [     
+            {"type": "gloss", "value": "PRS", "tooltip": "Present tense"},
+            {"type": "gloss", "value": "PST", "tooltip": "Past tense"},
+            {"type": "gloss", "value": "FUT", "tooltip": "Future tense"},
+            {"type": "separator"},
+            {"type": "gloss", "value": "EV", "tooltip": "Evidential mood"},
+            {"type": "gloss", "value": "IND", "tooltip": "Indicative mood"},
+            {"type": "gloss", "value": "SUBJ", "tooltip": "Subjunctive mood"},
+            {"type": "gloss", "value": "OPT", "tooltip": "Optative mood"},
+            {"type": "gloss", "value": "IMP", "tooltip": "Imperative mood"},            
+            {"type": "separator"},
+            {"type": "gloss", "value": "NEG", "tooltip": "Negation"}, 
+            {"type": "gloss", "value": "PRED", "tooltip": "Predicative"}
+        ],
+        [ 
+            {"type": "gloss", "value": "1SG", "tooltip": "First person singular"},
+            {"type": "gloss", "value": "2SG", "tooltip": "Second person singular"},
+            {"type": "gloss", "value": "3SG", "tooltip": "Third person singular"},
+            {"type": "gloss", "value": "SG", "tooltip": "Singular number"}
+            
+        ],
+        [
+            {"type": "gloss", "value": "1DU", "tooltip": "First person dual"},
+            {"type": "gloss", "value": "2DU", "tooltip": "Second person dual"},
+            {"type": "gloss", "value": "3DU", "tooltip": "Third person dual"},
+            {"type": "gloss", "value": "DU", "tooltip": "Dual number"}
+        ],
+        [
+            {"type": "gloss", "value": "1PL", "tooltip": "First person plural"},
+            {"type": "gloss", "value": "2PL", "tooltip": "Second person plural"},
+            {"type": "gloss", "value": "3PL", "tooltip": "Third person plural"},
+            {"type": "gloss", "value": "PL", "tooltip": "Plural number"}
+        ],
+        [
+            {"type": "gloss", "value": "S", "tooltip": "Subject"},
+            {"type": "gloss", "value": "O", "tooltip": "Object"},
+            {"type": "separator"},
+            {"type": "gloss", "value": "INCH", "tooltip": "Inchoative"},
+            {"type": "gloss", "value": "DUR", "tooltip": "Durative"},
+            {"type": "gloss", "value": "MOM", "tooltip": "Momentative"},
+            {"type": "gloss", "value": "ITER", "tooltip": "Iterative"},
+            {"type": "gloss", "value": "RES", "tooltip": "Resultative"}
+        ],
+        [
+            {"type": "gloss", "value": "TR", "tooltip": "Transitivizer"},
+            {"type": "gloss", "value": "REFL", "tooltip": "Reflexive"},
+            {"type": "gloss", "value": "CAUS", "tooltip": "Causative"},
+            {"type": "gloss", "value": "PASS", "tooltip": "Passive"},
+            {"type": "separator"},
+            {"type": "gloss", "value": "INF", "tooltip": "Infinitive"},
+            {"type": "gloss", "value": "PTCP", "tooltip": "Participle"},
+            {"type": "gloss", "value": "CVB", "tooltip": "Converb"}
+        ],
+        [
+            {"type": "gloss", "value": "COMP", "tooltip": "Comparative"},
+            {"type": "gramm", "value": "SBST", "tooltip": "Substantivizer"},
+            {"type": "gramm", "value": "VBZ", "tooltip": "Verbalizer"},
+            {"type": "separator"},
+            {"type": "gloss", "value": "ATTR", "tooltip": "Attributivizer"},
+            {"type": "gloss", "value": "PROP", "tooltip": "Proprietive"},
+            {"type": "gloss", "value": "DIM", "tooltip": "Diminutive"},
+            {"type": "gloss", "value": "PEJ", "tooltip": "Pejorative"},
+            {"type": "gloss", "value": "CAR", "tooltip": "Caritive"}
+        ],
+        [
+            {"type": "gloss", "value": "INDEF", "tooltip": "Indefinite"},
+            {"type": "gloss", "value": "EMPH", "tooltip": "Emphatic"},
+            {"type": "gloss", "value": "OBL", "tooltip": "Oblique stem"},
+            {"type": "separator"},                  
+            {"type": "gloss", "value": "APPR", "tooltip": "Approximative"},
+            {"type": "gloss", "value": "ORD", "tooltip": "Ordinal"},
+            {"type": "gloss", "value": "COLL", "tooltip": "Collective"},
+            {"type": "gloss", "value": "DIST", "tooltip": "Distributive"},
+            {"type": "separator"},
+            {"type": "gloss", "value": "DIR", "tooltip": "Directional"}            
+          ]
+        ]
+      },
+      "gramm_selection": {
+        "columns": [
+          [
+            {"type": "gramm", "value": "A", "tooltip": "Adjective"},
+            {"type": "gramm", "value": "ADV", "tooltip": "Adverb"},
+            {"type": "gramm", "value": "ART", "tooltip": "Article"},
+            {"type": "gramm", "value": "CONJ", "tooltip": "Conjunction"},
+            {"type": "gramm", "value": "HES", "tooltip": "Hesitation"},
+            {"type": "gramm", "value": "INTRJ", "tooltip": "Interjection"},
+            {"type": "gramm", "value": "N", "tooltip": "Noun"}
+           ],
+           [
+            {"type": "gramm", "value": "NUM", "tooltip": "Numeral"},
+            {"type": "gramm", "value": "PART", "tooltip": "Particle"},
+            {"type": "gramm", "value": "POST", "tooltip": "Postposition"},
+            {"type": "gramm", "value": "PREP", "tooltip": "Preposition"},
+            {"type": "gramm", "value": "PRON", "tooltip": "Pronoun"},
+            {"type": "gramm", "value": "PTCP", "tooltip": "Participle"},
+            {"type": "gramm", "value": "V", "tooltip": "Verb"}
+          ],
+          [
+            {"type": "gramm", "value": "TOPN", "tooltip": "Toponym"},
+            {"type": "gramm", "value": "HYDRN", "tooltip": "Hydronym"},
+            {"type": "gramm", "value": "ORON", "tooltip": "Oronym"},
+            {"type": "separator"},
+            {"type": "gramm", "value": "ZOON", "tooltip": "Zoonym"},
+            {"type": "separator"},
+            {"type": "gramm", "value": "FAMN", "tooltip": "Family name"},
+            {"type": "gramm", "value": "PERSN", "tooltip": "Personal name"},
+            {"type": "gramm", "value": "PATRN", "tooltip": "Patronym"}
+        ]
+      ]
+      }
+    }
+  }
+}
