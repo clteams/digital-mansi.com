@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import git
+import os
 from collections import namedtuple
 
 
@@ -8,7 +9,10 @@ class File2Process:
     def __init__(self, file_path):
         self.folder_properties = namedtuple("FProps", ["auto_sync", "restart"])
         self.file_path = file_path
-        self.symb_folder, self.in_folder = self.file_path.split('/', 1)
+        try:
+            self.symb_folder, self.in_folder = self.file_path.split('/', 1)
+        except ValueError:
+            self.symb_folder = False
 
         self.symb_folders = {
             "html_pages": self.folder_properties(auto_sync=True, restart=False),
@@ -22,6 +26,18 @@ class File2Process:
         }
 
         self.folder_methods = dict()
+        self.git_file = GitFile(self.file_path)
+
+        self.update_file_tree()
+
+    def update_file_tree(self):
+        if not self.symb_folder:
+            return
+
+        if self.symb_folder not in self.folder_methods:
+            return
+
+        self.folder_methods[self.symb_folder]()
 
     def on_folder(self, folder_name):
         def wrapper(fn):
@@ -31,6 +47,15 @@ class File2Process:
             return wrapped
 
         return wrapper
+
+    @on_folder("html_pages")
+    def update_html_pages(self):
+        if self.git_file.status == "delete":
+            os.remove("/var/www/html/%s" % self.in_folder)
+        elif self.git_file.status in ["modify", "add"]:
+            with open("/var/www/html/%s" % self.in_folder, "w") as of:
+                of.write(self.git_file.file_content)
+                of.close()
 
 
 class GitFile:
@@ -66,3 +91,5 @@ for e, commit in enumerate(repo.iter_commits()):
 diff = repo.git.diff(a_commit, b_commit, name_only=True)
 for element in diff.split():
     print(element)
+
+print("publications/lals2018-Zhornik-Sizov.pdf" in repo.commit(b_commit).tree)
