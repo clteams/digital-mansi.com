@@ -28,6 +28,8 @@ class File2Process:
         self.folder_methods = dict()
         self.git_file = GitFile(self.file_path)
 
+        self.folder_methods["html_pages"] = self.update_html_pages
+
         self.update_file_tree()
 
     def update_file_tree(self):
@@ -48,7 +50,6 @@ class File2Process:
 
         return wrapper
 
-    @on_folder("html_pages")
     def update_html_pages(self):
         if self.git_file.status == "delete":
             os.remove("/var/www/html/%s" % self.in_folder)
@@ -91,5 +92,3 @@ for e, commit in enumerate(repo.iter_commits()):
 diff = repo.git.diff(a_commit, b_commit, name_only=True)
 for element in diff.split():
     print(element)
-
-print("publications/lals2018-Zhornik-Sizov.pdf" in repo.commit(b_commit).tree)
