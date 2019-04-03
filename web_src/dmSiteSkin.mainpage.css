@@ -8,31 +8,31 @@
 .navbar-brand { left: 10px }
 @font-face {
   font-family: "Stolz Thin";
-  src: url("stolz_thin.otf");
+  src: url("/media/stolz_thin.otf");
 }
 @font-face {
   font-family: "Stolz Light";
-  src: url("stolz_light.otf");
+  src: url("/media/stolz_light.otf");
 }
 @font-face {
   font-family: "Stolz Book";
-  src: url("stolz_book.otf");
+  src: url("/media/stolz_book.otf");
 }
 @font-face {
   font-family: "Stolz Medium";
-  src: url("stolz_medium.otf");
+  src: url("/media/stolz_medium.otf");
 }
 @font-face {
   font-family: "GuberniaTyg";
-  src: url("gubernia.ttf");
+  src: url("/media/gubernia.ttf");
 }
 @font-face {
   font-family: "Caviar Dreams";
-  src: url("caviar.ttf");
+  src: url("/media/caviar.ttf");
 }
 @font-face {
   font-family: "South Park Cyrillic";
-  src: url("south_park.ttf");
+  src: url("/media/south_park.ttf");
 }
 .nav-item {
   font-family: "Stolz Light";
