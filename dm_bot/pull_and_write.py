@@ -29,6 +29,7 @@ class File2Process:
         self.git_file = GitFile(self.file_path)
 
         self.folder_methods["html_pages"] = self.update_html_pages
+        self.folder_methods["media_files"] = self.update_media_files
 
     def update_file_tree(self):
         if not self.symb_folder:
@@ -48,13 +49,20 @@ class File2Process:
 
         return wrapper
 
-    def update_html_pages(self):
+    def update_dir_default(self, dir_path):
         if self.git_file.status == "delete":
-            os.remove("/var/www/html/%s" % self.in_folder)
+            os.remove(dir_path + "/%s" % self.in_folder)
         elif self.git_file.status in ["modify", "add"]:
-            with open("/var/www/html/%s" % self.in_folder, "wb") as of:
+            with open(dir_path + "/%s" % self.in_folder, "wb") as of:
                 of.write(self.git_file.file_content)
                 of.close()
+
+    def update_html_pages(self):
+        self.update_dir_default("/var/www/html")
+
+    def update_media_files(self):
+        self.update_dir_default("/var/www/html/media")
+
 
 
 class GitFile:
