@@ -52,7 +52,7 @@ class File2Process:
         if self.git_file.status == "delete":
             os.remove("/var/www/html/%s" % self.in_folder)
         elif self.git_file.status in ["modify", "add"]:
-            with open("/var/www/html/%s" % self.in_folder, "w") as of:
+            with open("/var/www/html/%s" % self.in_folder, "wb") as of:
                 of.write(self.git_file.file_content)
                 of.close()
 
