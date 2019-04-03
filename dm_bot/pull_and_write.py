@@ -30,6 +30,7 @@ class File2Process:
 
         self.folder_methods["html_pages"] = self.update_html_pages
         self.folder_methods["media_files"] = self.update_media_files
+        self.folder_methods["web_src"] = self.update_web_src
 
     def update_file_tree(self):
         if not self.symb_folder:
@@ -62,6 +63,9 @@ class File2Process:
 
     def update_media_files(self):
         self.update_dir_default("/var/www/html/media")
+
+    def update_web_src(self):
+        self.update_dir_default("/var/www/html/web_src")
 
 
 
