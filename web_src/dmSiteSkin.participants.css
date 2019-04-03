@@ -1,0 +1,15 @@
+.img-three-lines {
+  position: relative;
+  bottom: 7px;
+}
+.img-four-lines {
+  position: relative;
+  top: 7px;
+}
+.img-five-lines {
+  position: relative;
+  top: 15px;
+}
+.display-4 {
+  line-height: 0.4;
+}

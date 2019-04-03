@@ -1,0 +1,20 @@
+.map {
+    height: 58%;
+    width: 55%;
+    left: 43%;
+    position: absolute;
+}
+small {
+    font-size: 70%;
+}
+#comment {
+    line-height: 1.2;
+    /*outline: 1px dotted #000;*/
+    text-align: center;
+    vertical-align: middle;
+    font-family: Stolz Light;
+    font-style: italic;
+}
+.display-4 {
+    line-height: 0.4;
+}
