@@ -41,15 +41,6 @@ class File2Process:
 
         self.folder_methods[self.symb_folder]()
 
-    def on_folder(self, folder_name):
-        def wrapper(fn):
-            def wrapped(*args):
-                self.folder_methods[folder_name] = fn
-
-            return wrapped
-
-        return wrapper
-
     def update_dir_default(self, dir_path):
         if self.git_file.status == "delete":
             os.remove(dir_path + "/%s" % self.in_folder)
