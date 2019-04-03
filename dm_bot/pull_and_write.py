@@ -30,8 +30,6 @@ class File2Process:
 
         self.folder_methods["html_pages"] = self.update_html_pages
 
-        self.update_file_tree()
-
     def update_file_tree(self):
         if not self.symb_folder:
             return
@@ -91,4 +89,4 @@ for e, commit in enumerate(repo.iter_commits()):
 
 diff = repo.git.diff(a_commit, b_commit, name_only=True)
 for element in diff.split():
-    print(element)
+    File2Process(element).update_file_tree()
