@@ -59,7 +59,6 @@ class File2Process:
         self.update_dir_default("/var/www/html/web_src")
 
 
-
 class GitFile:
     def __init__(self, file_path):
         global a_commit, b_commit
