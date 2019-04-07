@@ -1,217 +1,216 @@
 <!DOCTYPE HTML>
 <html>
 
-  <head>
-    <link rel="stylesheet" href="/web_src/bootstrap-material-design.min.css">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/icon">
-    <link rel="icon" href="/favicon.ico" type="image/icon">
-    <link rel="stylesheet" href="/web_src/ol-4.6.5.css" type="text/css">
-    <meta charset="utf-8">
-    <script src="/web_src/ol-4.6.5.js" type="text/javascript"></script>
-    <script src="/web_src/jquery-3.3.1.min.js"></script>
-    <title>Мансийский язык: публикации</title>
-    <style>
-    .jumbotron {
-        padding: 4rem 2rem;
-        margin-bottom: 0rem;
-        /*visibility: hidden;
-        height: 110vh;*/
-    }
-    .rffi { font-size: 0.9rem; }
-    .navbar-brand { left: 10px }
-    @font-face {
-        font-family: "Stolz Thin";
-        src: url("stolz_thin.otf");
-    }
-    @font-face {
-        font-family: "Stolz Light";
-        src: url("stolz_light.otf");
-    }
-    @font-face {
-        font-family: "Stolz Book";
-        src: url("stolz_book.otf");
-    }
-    @font-face {
-        font-family: "Stolz Medium";
-        src: url("stolz_medium.otf");
-    }
-    @font-face {
-        font-family: "GuberniaTyg";
-        src: url("gubernia.ttf");
-    }
-    @font-face {
-    font-family: "Caviar Dreams";
-    src: url("caviar.ttf");
-    }
-    @font-face {
-        font-family: "South Park Cyrillic";
-        src: url("south_park.ttf");
-    }
-    .nav-item {
-        font-family: "Stolz Light";
-        font-size: 3px;
-    }
-    #ornament-f {
-        background-image: url(//digital-mansi.com/ornament2.png);
-        background-size: 340px;
-        background-position-x: -5px;
-    }
-    #ornament-s {
-        background-image: url(//digital-mansi.com/ornament2.png);
-        background-size: 340px;
-        background-position-x: -135px;
-    }
-    .footer {
-        box-shadow: 0 -1px 2px 0 rgba(0,0,0,0.5);
-    }
-    a.colored {
-        color: #20932b;
-        font-weight: bold;
-    }
-    ul li.media {
-        margin-bottom: 20px;
-    }
-    ul li img {
-        border-radius: 50%;
-    }
-    li.media p {
-        margin-bottom: 0.5rem;
-    }
-    h5 {
-        font-size: 0.9rem !important;
-        line-height: 0.6;
-    }
-    .map {
-        height: 58%;
-        width: 55%;
-        left: 43%;
-        position: absolute;
-    }
-    small {
-        font-size: 70%;
-    }
-    #comment {
-        line-height: 1.2;
-        /*outline: 1px dotted #000;*/
-        text-align: center;
-        vertical-align: middle;
-        font-family: Stolz Light;
-        font-style: italic;
-    }
-    .display-4 {
-        line-height: 0.4;
-    }
-    .footer .navbar-brand {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        text-align: center;
-        margin: 0 auto;
-    }
-    .footer .navbar-toggle {
-        z-index: 3;
-    }
-    </style>
-    <script src="/web_src/dmSitesSkin.top.js"></script>
-  </head>
+    <head>
+        <link rel="stylesheet" href="/web_src/bootstrap-material-design.min.css">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/icon">
+        <link rel="icon" href="/favicon.ico" type="image/icon">
+        <link rel="stylesheet" href="/web_src/ol-4.6.5.css" type="text/css">
+        <meta charset="utf-8">
+        <script src="/web_src/ol-4.6.5.js" type="text/javascript"></script>
+        <script src="/web_src/jquery-3.3.1.min.js"></script>
+        <title>Мансийский язык: публикации</title>
+        <style>
+        .jumbotron {
+            padding: 4rem 2rem;
+            margin-bottom: 0rem;
+            /*
+            visibility: hidden;
+            height: 110vh;
+            */
+        }
+        .rffi { font-size: 0.9rem; }
+        .navbar-brand { left: 10px }
+        @font-face {
+            font-family: "Stolz Thin";
+            src: url("stolz_thin.otf");
+        }
+        @font-face {
+            font-family: "Stolz Light";
+            src: url("stolz_light.otf");
+        }
+        @font-face {
+            font-family: "Stolz Book";
+            src: url("stolz_book.otf");
+        }
+        @font-face {
+            font-family: "Stolz Medium";
+            src: url("stolz_medium.otf");
+        }
+        @font-face {
+            font-family: "GuberniaTyg";
+            src: url("gubernia.ttf");
+        }
+        @font-face {
+        font-family: "Caviar Dreams";
+        src: url("caviar.ttf");
+        }
+        @font-face {
+            font-family: "South Park Cyrillic";
+            src: url("south_park.ttf");
+        }
+        .nav-item {
+            font-family: "Stolz Light";
+            font-size: 3px;
+        }
+        #ornament-f {
+            background-image: url(//digital-mansi.com/ornament2.png);
+            background-size: 340px;
+            background-position-x: -5px;
+        }
+        #ornament-s {
+            background-image: url(//digital-mansi.com/ornament2.png);
+            background-size: 340px;
+            background-position-x: -135px;
+        }
+        .footer {
+            box-shadow: 0 -1px 2px 0 rgba(0,0,0,0.5);
+        }
+        a.colored {
+            color: #20932b;
+            font-weight: bold;
+        }
+        ul li.media {
+            margin-bottom: 20px;
+        }
+        ul li img {
+            border-radius: 50%;
+        }
+        li.media p {
+            margin-bottom: 0.5rem;
+        }
+        h5 {
+            font-size: 0.9rem !important;
+            line-height: 0.6;
+        }
+        .map {
+            height: 58%;
+            width: 55%;
+            left: 43%;
+            position: absolute;
+        }
+        small {
+            font-size: 70%;
+        }
+        #comment {
+            line-height: 1.2;
+            /*outline: 1px dotted #000;*/
+            text-align: center;
+            vertical-align: middle;
+            font-family: Stolz Light;
+            font-style: italic;
+        }
+        .display-4 {
+            line-height: 0.4;
+        }
+        .footer .navbar-brand {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .footer .navbar-toggle {
+            z-index: 3;
+        }
+        </style>
+        <script src="/web_src/dmSitesSkin.top.js"></script>
+    </head>
 
-  <body>
+    <body>
 
-  <nav class="navbar sobol navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand withoutripple" href="#" onclick="disripp(this)"><img src="sobol.svg" width="100"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+        <nav class="navbar sobol navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand withoutripple" href="#" onclick="disripp(this)"><img src="sobol.svg" width="100"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <font face="Stolz Light" size="3">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="index.html">Главная</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="corpus"><font face="Stolz Light">Корпус</font></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="participants.html">Участники</a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="consultants.html">Консультанты</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="publications.html">Публикации <span class="sr-only">(current)</span></a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="bibliography.html">Библиография</a>
-      </li>
-      
-    </ul>
-    </font>
-  </div>
-</nav>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <font face="Stolz Light" size="3">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="corpus"><font face="Stolz Light">Корпус</font></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="participants.html">Участники</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="consultants.html">Консультанты</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="publications.html">Публикации <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="bibliography.html">Библиография</a>
+                        </li>
 
-<div id="ornament-f" class="ornament" style="width:135px; position: absolute;">&nbsp;</div>
-<div id="ornament-s" class="ornament" style="width:135px; position: absolute; right: 0%;">&nbsp;</div>
+                    </ul>
+                </font>
+            </div>
+        </nav>
 
-<div class="jumbotron" style="width: 80%; position: relative; left: 10%; font-family: Stolz Light; font-size: 15px;">
+        <div id="ornament-f" class="ornament" style="width:135px; position: absolute;">&nbsp;</div>
+        <div id="ornament-s" class="ornament" style="width:135px; position: absolute; right: 0%;">&nbsp;</div>
 
-  <h1 class="display-6">
-    <font face="GuberniaTyg" size="7">Публикации</font>
-  </h1>
-  <hr class="my-4">
-  <p>На этой странице представлены публикации участников проекта.</p>
-  <hr class="my-4">
+        <div class="jumbotron" style="width: 80%; position: relative; left: 10%; font-family: Stolz Light; font-size: 15px;">
+            <h1 class="display-6">
+                <font face="GuberniaTyg" size="7">Публикации</font>
+            </h1>
+            <hr class="my-4">
+            <p>На этой странице представлены публикации участников проекта.</p>
+            <hr class="my-4">
 
-  <h1 class="display-8">
-    <font face="GuberniaTyg" size="6">Статьи</font>
-  </h1>
-  <hr class="my-4">
+            <h1 class="display-8">
+                <font face="GuberniaTyg" size="6">Статьи</font>
+            </h1>
+            <hr class="my-4">
 
-  <ul>
-    <li>Zhornik D. O., Sizov F. O. (2018). Linguistic variation and minor languages corpora: a case study of Mansi dialects // Компьютерная лингвистика и интеллектуальные технологии: По материалам ежегодной международной конференции «Диалог» (Москва, 30 мая — 2 июня 2018 г.). Вып. 17(24) (электронная публикация: <a href="http://www.dialog-21.ru/media/4265/zhornik_sizov.pdf" class="colored">http://www.dialog-21.ru/media/4265/zhornik_sizov.pdf</a>).</li>
-    <li>Д. О. Жорник, С. В. Покровская. (2018) Документация верхнелозьвинского диалекта мансийского языка // Татевосов С.Г., Семенова Кс.П. (ред.). Малые языки в большой лингвистике. Москва: Буки Веди, 49-57.</li>
-  </ul>
- 
- <h1 class="display-8">
-    <font face="GuberniaTyg" size="6">Материалы к докладам на конференциях</font>
-  </h1>
-  <hr class="my-4">
+            <ul>
+                <li>Zhornik D. O., Sizov F. O. (2018). Linguistic variation and minor languages corpora: a case study of Mansi dialects // Компьютерная лингвистика и интеллектуальные технологии: По материалам ежегодной международной конференции «Диалог» (Москва, 30 мая — 2 июня 2018 г.). Вып. 17(24) (электронная публикация: <a href="http://www.dialog-21.ru/media/4265/zhornik_sizov.pdf" class="colored">http://www.dialog-21.ru/media/4265/zhornik_sizov.pdf</a>).</li>
+                <li>Д. О. Жорник, С. В. Покровская. (2018) Документация верхнелозьвинского диалекта мансийского языка // Татевосов С.Г., Семенова Кс.П. (ред.). Малые языки в большой лингвистике. Москва: Буки Веди, 49-57.</li>
+            </ul>
 
-  <ul>
-    <li>
-     Жорник Д. О., Покровская С. В. (2017). Документация верхнелозьвинского диалекта мансийского языка // Доклад на конференции «<a href="http://tipl.philol.msu.ru/index.php/science/conferences/fieldworks50/main" class="colored">Малые языки в большой лингвистике</a>» (Москва, МГУ имени М. В. Ломоносова, 2-3 ноября 2017): <a href="http://tipl.philol.msu.ru/application/files/3015/0931/1567/fieldworks2017-Zhornik-Pokrovskaya.pdf" class="colored">тезисы</a>, <a href="fieldworks2017-Zhornik-Pokrovskaya-poster.pdf" class="colored">постер</a>.
-    </li>
-    <li>Жорник Д. О, Покровская С. В. (2017). Проблемы орфографии языка северных манси // Доклад на конференции «Языки малочисленных народов России: устное vs. письменное» (С.-Петербург, ИЛИ РАН, 4-6 декабря 2017): <a href="ortho2017-Zhornik-Pokrovskaya-presentation.pdf" class="colored">презентация</a>.</li>
-    <li>Zhornik D. O., Pokrovskaya S. V. (2018). Allomorphy and dialectal variation in Northern Mansi nominal paradigms // Talk at the conference "18th International Morphology Meeting" (Budapest, Hungary, 10-13 May 2018): <a href="imm18-Zhornik-Pokrovskaya-presentation.pdf" class="colored">презентация</a>.</li>
-    <li>Zhornik D. O., Sizov F. O. (2018). Linguistic variation and minor languages corpora: a case study of Mansi dialects // Доклад на ежегодной международной конференции «Диалог» (Москва, 30 мая — 2 июня 2018 г.): <a href="dialog2018-Zhornik-Sizov-poster.pdf" class="colored">постер</a>.</li>
-    <li>Zhornik D. O. (2018). Passive constructions in Uralic: a special case of contact-induced development? // Talk at the conference "The shaping of transitivity and argument structure: theoretical and applied perspectives" (Pavia, Italy, 25-27 October 2018): <a href="stas2018-Zhornik.pdf" class="colored">тезисы</a>, <a href="stas2018-Zhornik-presentation.pdf" class="colored">презентация</a>.</li>
-   <li>Жорник Д. О, Сизов Ф. О. (2018). Электронный корпус мансийских текстов: проблемы разработки и перспективы использования // Доклад на конференции памяти В.М. Андрющенко "От языковых машинных фондов к лингвистическим корпусам" (Москва, ИРЯ РАН, 27-28 сентября 2018): <a href="lals2018-Zhornik-Sizov.pdf" class="colored">тезисы</a>, <a href="lals2018-Zhornik-Sizov-presentation.pdf" class="colored">презентация</a>.</li>
-   <li>Zhornik D. O., Pokrovskaya S. V. (2018). Modeling visual stimuli for descriptive fieldwork among the Upper Lozva Mansi: metalanguage vs. target language // Talk at the workshop "Fieldwork: methods and theory" (Gothenburg, Sweden, 13-14 December 2018): <a href="fmt2018-Zhornik-Pokrovskaya.pdf" class="colored">тезисы</a>, <a href="fmt2018-Zhornik-Pokrovskaya-presentation.pdf" class="colored">презентация</a>.</li>
-  </ul>  
- 
-<br><br>
-</div>
+            <h1 class="display-8">
+                <font face="GuberniaTyg" size="6">Материалы к докладам на конференциях</font>
+            </h1>
+            <hr class="my-4">
 
-<nav class="navbar navbar-default navbar-light bg-light footer" style="height: 50px; position: relative;" role="navigation">
-  <div class="navbar-header" style="visibility: hidden">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>    
-  </div>
-  <font face="Stolz Light" class="navbar-brand" style="font-size: 12px">САЙТ СОЗДАН ПРИ ПОДДЕРЖКЕ ГРАНТА РФФИ 18-012-00833А "ДИНАМИКА ФОНЕТИЧЕСКИХ И ГРАММАТИЧЕСКИХ СИСТЕМ ОБСКО-УГОРСКИХ ЯЗЫКОВ" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2018</font>
-  <div class="navbar-collapse collapse">
-    <ul class="nav navbar-nav navbar-left">
-        <li><a href="#">Left</a></li>
-        <li><a href="#about">Left</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#about">Right</a></li>
-      <li><a href="#contact">Right</a></li>
-    </ul>
-  </div>
-</nav>
+            <ul>
+                <li>Жорник Д. О., Покровская С. В. (2017). Документация верхнелозьвинского диалекта мансийского языка // Доклад на конференции «<a href="http://tipl.philol.msu.ru/index.php/science/conferences/fieldworks50/main" class="colored">Малые языки в большой лингвистике</a>» (Москва, МГУ имени М. В. Ломоносова, 2-3 ноября 2017): <a href="http://tipl.philol.msu.ru/application/files/3015/0931/1567/fieldworks2017-Zhornik-Pokrovskaya.pdf" class="colored">тезисы</a>, <a href="fieldworks2017-Zhornik-Pokrovskaya-poster.pdf" class="colored">постер</a>.</li>
+                <li>Жорник Д. О, Покровская С. В. (2017). Проблемы орфографии языка северных манси // Доклад на конференции «Языки малочисленных народов России: устное vs. письменное» (С.-Петербург, ИЛИ РАН, 4-6 декабря 2017): <a href="ortho2017-Zhornik-Pokrovskaya-presentation.pdf" class="colored">презентация</a>.</li>
+                <li>Zhornik D. O., Pokrovskaya S. V. (2018). Allomorphy and dialectal variation in Northern Mansi nominal paradigms // Talk at the conference "18th International Morphology Meeting" (Budapest, Hungary, 10-13 May 2018): <a href="imm18-Zhornik-Pokrovskaya-presentation.pdf" class="colored">презентация</a>.</li>
+                <li>Zhornik D. O., Sizov F. O. (2018). Linguistic variation and minor languages corpora: a case study of Mansi dialects // Доклад на ежегодной международной конференции «Диалог» (Москва, 30 мая — 2 июня 2018 г.): <a href="dialog2018-Zhornik-Sizov-poster.pdf" class="colored">постер</a>.</li>
+                <li>Zhornik D. O. (2018). Passive constructions in Uralic: a special case of contact-induced development? // Talk at the conference "The shaping of transitivity and argument structure: theoretical and applied perspectives" (Pavia, Italy, 25-27 October 2018): <a href="stas2018-Zhornik.pdf" class="colored">тезисы</a>, <a href="stas2018-Zhornik-presentation.pdf" class="colored">презентация</a>.</li>
+                <li>Жорник Д. О, Сизов Ф. О. (2018). Электронный корпус мансийских текстов: проблемы разработки и перспективы использования // Доклад на конференции памяти В.М. Андрющенко "От языковых машинных фондов к лингвистическим корпусам" (Москва, ИРЯ РАН, 27-28 сентября 2018): <a href="lals2018-Zhornik-Sizov.pdf" class="colored">тезисы</a>, <a href="lals2018-Zhornik-Sizov-presentation.pdf" class="colored">презентация</a>.</li>
+                <li>Zhornik D. O., Pokrovskaya S. V. (2018). Modeling visual stimuli for descriptive fieldwork among the Upper Lozva Mansi: metalanguage vs. target language // Talk at the workshop "Fieldwork: methods and theory" (Gothenburg, Sweden, 13-14 December 2018): <a href="fmt2018-Zhornik-Pokrovskaya.pdf" class="colored">тезисы</a>, <a href="fmt2018-Zhornik-Pokrovskaya-presentation.pdf" class="colored">презентация</a>.</li>
+            </ul>
+
+            <br><br>
+        </div>
+
+        <nav class="navbar navbar-default navbar-light bg-light footer" style="height: 50px; position: relative;" role="navigation">
+            <div class="navbar-header" style="visibility: hidden">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <font face="Stolz Light" class="navbar-brand" style="font-size: 12px">САЙТ СОЗДАН ПРИ ПОДДЕРЖКЕ ГРАНТА РФФИ 18-012-00833А "ДИНАМИКА ФОНЕТИЧЕСКИХ И ГРАММАТИЧЕСКИХ СИСТЕМ ОБСКО-УГОРСКИХ ЯЗЫКОВ" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2018</font>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="#">Left</a></li>
+                    <li><a href="#about">Left</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">Right</a></li>
+                    <li><a href="#contact">Right</a></li>
+                </ul>
+            </div>
+        </nav>
 
     <script src="/web_src/jquery-3.2.1.slim.min.js"></script>
     <script src="/web_src/popper.js"></script>
@@ -219,6 +218,5 @@
     <script src="/web_src/dmSiteSkin.bottom.js"></script>
 
   </body>
-
 
 </html>
