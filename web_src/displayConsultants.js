@@ -4,6 +4,7 @@ function adjustPopover(popover, iframe) {
   iframe.style.height = height;
   popoverContent.css('height', height);
 }
+
 window.onload = function () {
     $('.ornament').height($('.jumbotron').height() + $('.sobol').height() + 80);
     audio = new Audio('sable.mp3');
