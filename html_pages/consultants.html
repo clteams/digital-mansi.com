@@ -1,15 +1,14 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html>
 
   <head>
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed' rel='stylesheet'>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/icon">
-    <link rel="icon" href="/favicon.ico" type="image/icon">
-    <link rel="stylesheet" href="https://openlayers.org/en/v4.6.5/css/ol.css" type="text/css">
+    <link rel="stylesheet" href="/web_src/bootstrap-material-design.min.css">
+    <link rel="shortcut icon" href="/media/favicon.ico" type="image/icon">
+    <link rel="icon" href="/media/favicon.ico" type="image/icon">
+    <link rel="stylesheet" href="/web_src/ol.css" type="text/css">
     <meta charset="utf-8">
-    <script src="https://openlayers.org/en/v4.6.5/build/ol.js" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/web_src/ol.js" type="text/javascript"></script>
+    <script src="/web_src/jquery-3.3.1.min.js"></script>
     <title>Мансийский язык: консультанты</title>
     <style>
     .jumbotron {
@@ -554,113 +553,10 @@
 }
 </style>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
-    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
-    <script>
-    function adjustPopover(popover, iframe) {
-      var height = iframe.contentWindow.document.body.scrollHeight + 'px',
-          popoverContent = $(popover).next('.popover-content');
-      iframe.style.height = height;
-      popoverContent.css('height', height);
-    }
-    window.onload = function () {
-        $('.ornament').height($('.jumbotron').height() + $('.sobol').height() + 80);
-        audio = new Audio('sable.mp3');
-        $('.navbar-brand').click(function () {
-              audio.play();
-              setTimeout(function(){audio.pause();}, 1700);    
-        });
-        $("route").each(function() {
-          var link = $("<a></a>");
-          var route_title = "";
-          var route_content = "";
-          $(this).html(
-            "(" + $(this).html().replace(/\.\.\./g, '&hellip;').replace(/,/g, '&#8594;').replace(
-              /([^<])\//g, '$1&#8596;'
-            ).replace(/&#8594;\s*&hellip;\s*&#8594;/g, '&#10230;') + ")"
-          );
-          link.attr("role", "button").attr("data-toggle", "popover").attr("data-trigger", "hover");
-          link.attr("class", "route-link");
-          var i = 0;
-          while ($(this).attr("place-" + i)) {
-            route_title += $(this).attr("place-" + i);
-            if ($(this).attr("place-" + (i + 1))) {
-              var rel = "rel-" + i + "-" + (i + 1);
-              if (!$(this).attr(rel)) {
-                route_title += " &#8594; "
-              } else if ($(this).attr(rel) == "varies") {
-                route_title += " &#8596; ";
-              }
-            }
-            i ++;
-          }
-          route_title = route_title;
-          var rt_insertion = document.createElement("div");
-          rt_insertion.innerHTML = route_title;
-          //link.attr("title", route_title);
-          //link.attr("data-content", route_content);
-          link.html($(this).html());
-          $(this).parent().append(link);
-          var rc_insertion = document.createElement("div");
-          rc_insertion.className = "popover-content-div";
-          rc_insertion.innerHTML = route_content;
-          if ($(this).attr("story")) {
-            var story = document.createElement("div");
-            story.innerHTML = $(this).attr("story");
-            rc_insertion.appendChild(story);
-          }
-          else if ($(this).attr("last-place-prefix")) {
-            var story = document.createElement("div");
-            var story_end = "в ";
-            if ($(this).attr("last-place-url")) {
-              story_end += '<a href="' + $(this).attr("last-place-url") + '">';
-            }
-            story_end += $(this).attr("last-place-prefix") + " " + $(this).attr("place-" + (i - 1));
-            story_end += '</a>';
-            if ($(this).attr("alive") == "y") {
-              story.innerHTML = "Проживает " + story_end;
-            }
-            else if ($(this).attr("gender")) {
-              story.innerHTML = "Проживал" + ($(this).attr("gender") == "m" ? "а" : "") + " " + story_end;
-            }
-            rc_insertion.appendChild(story);
-          }
-          if ($(this).attr("last-place-frame")) {
-           var lpf = document.createElement("div");
-           lpf.innerHTML = "<hr>" + $(this).attr("last-place-frame");
-           rc_insertion.appendChild(lpf);
-          }
-          if ($(this).attr("age")) {
-            var age = document.createElement("div");
-            age.innerHTML = "Возраст: <b>" + $(this).attr("age") + "</b>";
-            rc_insertion.appendChild(age);
-          }
-          link.popover({
-            html: true,
-            trigger: "manual",
-            animation: false,
-            title: rt_insertion,
-            content: rc_insertion
-          }).on('mouseenter', function () {
-            var _this = this;
-            $(this).popover('show');
-            $('.popover').on('mouseleave', function () {
-                $(_this).popover('hide');
-            });
-          }).on('mouseleave', function () {
-            var _this = this;
-            setTimeout(function () {
-              if (!$('.popover:hover').length) {
-                $(_this).popover('hide');
-              }
-            }, 200);
-          });
-          $(this).remove();
-        });
-    };
-    </script>
+    <script src="/web_src/popper.js"></script>
+    <script src="/web_src/bootstrap-material-design.js"></script>
+    <script src="/web_src/dmSiteSkin.bottom.js"></script>
+    <script src="/web_src/displayConsultants.js"></script>
 
   </body>
 
