@@ -60,15 +60,20 @@ class File2Process:
 
 
 class GitFile:
-    def __init__(self, file_path):
+    def __init__(self, file_path, status=None, content=None):
+        self.file_path = file_path
+        self.status = None if not status else status
+        self.file_content = None if not content else content
+        if not self.status:
+            self.set_status()
+
+    def set_status(self):
         global a_commit, b_commit
         global repo
-        self.status = None
-        self.file_content = None
         try:
-            self.file_content = repo.commit(a_commit).tree[file_path].data_stream.read()
+            self.file_content = repo.commit(a_commit).tree[self.file_path].data_stream.read()
             try:
-                fl = repo.commit(b_commit).tree[file_path].data_stream.read()
+                fl = repo.commit(b_commit).tree[self.file_path].data_stream.read()
                 self.status = "modify"
             except KeyError:
                 self.status = "add"
