@@ -59,6 +59,46 @@ class File2Process:
         self.update_dir_default("/var/www/html/web_src")
 
 
+class DMBotPipeline:
+    def __init__(self, rep, commit_msg, git_files, branch="master"):
+        self.repo = rep
+        self.commit_msg = commit_msg
+        self.branch = branch
+        self.branch_exists = True
+        try:
+            self.repo.git.checkout(self.branch)
+        except git.CommandError:
+            self.branch_exists = False
+            self.repo.git.checkout("-b", self.branch)
+        self.git_files = git_files
+
+    def add_file_object(self, git_file):
+        self.git_files.append(git_file)
+
+    def apply(self):
+        self.change_file_tree()
+        self.commit()
+        ab_patch()
+        self.push()
+
+    def change_file_tree(self):
+        for file in self.git_files:
+            if file.status == "delete":
+                os.remove(file.file_path)
+            elif file.status in ["modify", "add"]:
+                with open(file.file_path, "wb") as of:
+                    of.write(file.file_content)
+                    of.close()
+
+    def commit(self):
+        self.repo.git.add(update=True)
+        self.repo.index.commit(self.commit_msg)
+
+    def push(self):
+        origin = self.repo.remote(name="origin")
+        origin.push()
+
+
 class CommitMessage:
     def __init__(self, main_components, sub_components=None):
         self._main = main_components
@@ -119,19 +159,27 @@ class GitFile:
             self.status = "delete"
 
 
-repo = git.Repo("../")
+REPO_PATH = ".."
+repo = git.Repo(REPO_PATH + "/")
 
 a_commit = None
 b_commit = None
-for e, commit in enumerate(repo.iter_commits()):
-    if not e:
-        a_commit = commit
-    elif e == 1:
-        b_commit = commit
-    else:
-        break
 
 
-diff = repo.git.diff(a_commit, b_commit, name_only=True)
-for element in diff.split():
-    File2Process(element).update_file_tree()
+def ab_patch():
+    global repo, a_commit, b_commit
+    for e, commit in enumerate(repo.iter_commits()):
+        if not e:
+            a_commit = commit
+        elif e == 1:
+            b_commit = commit
+        else:
+            break
+
+    diff = repo.git.diff(a_commit, b_commit, name_only=True)
+    for element in diff.split():
+        File2Process(element).update_file_tree()
+
+
+if __name__ == "__main__":
+    ab_patch()
