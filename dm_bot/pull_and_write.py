@@ -59,6 +59,44 @@ class File2Process:
         self.update_dir_default("/var/www/html/web_src")
 
 
+class CommitMessage:
+    def __init__(self, main_components, sub_components=None):
+        self._main = main_components
+        self._sub = sub_components if sub_components else {}
+
+    def new_text(self, text_msg):
+        ix = 0
+        while ix in self._main:
+            ix += 1
+
+        return dict(ix=text_msg)
+
+    @staticmethod
+    def _issue(issue_int, fixes=False, closes=False):
+        issue = "#%d" % issue_int
+        if fixes:
+            issue = "Fixes " + issue
+        elif closes:
+            issue = "Closes " + issue
+
+        return dict(_issue=issue)
+
+    @staticmethod
+    def _macro(**kwargs):
+        in_paren = [kwargs[k] for k in ("name", "commit")]
+
+        return dict(_macro="(macro %s)" % ", ".join(in_paren))
+
+    def ser_main(self):
+        return " ".join(sorted(self._main, key=lambda key: str(key)))
+
+    def ser_sub(self):
+        return " ".join(sorted(self._sub, key=lambda key: str(key)))
+
+    def merge(self):
+        return self.ser_main() + ("\n%s" % self.ser_sub() if self._sub else "")
+
+
 class GitFile:
     def __init__(self, file_path, status=None, content=None):
         self.file_path = file_path
