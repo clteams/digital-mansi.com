@@ -109,7 +109,7 @@ class CommitMessage:
         while ix in self._main:
             ix += 1
 
-        return dict(ix=text_msg)
+        return {ix: text_msg}
 
     @staticmethod
     def _issue(issue_int, fixes=False, closes=False):
