@@ -78,7 +78,7 @@ class DMBotPipeline:
     def apply(self):
         self.change_file_tree()
         self.commit()
-        ab_patch()
+        patch_local_files()
         self.push()
 
     def change_file_tree(self):
@@ -166,7 +166,7 @@ a_commit = None
 b_commit = None
 
 
-def ab_patch():
+def patch_local_files():
     global repo, a_commit, b_commit
     for e, commit in enumerate(repo.iter_commits()):
         if not e:
@@ -182,4 +182,4 @@ def ab_patch():
 
 
 if __name__ == "__main__":
-    ab_patch()
+    patch_local_files()
